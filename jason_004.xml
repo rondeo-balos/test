@@ -1,0 +1,22 @@
+<reference name="head">
+	<block type="core/text" name="blog.redirect" before="-">
+		<action method="setText">
+			<text><![CDATA[<meta http-equiv="refresh" content="0; url=https://www.curiousbrewery.com/shop/shop-all/" /><style>.wrapper{display:none;}</style>]]></text>
+		</action>
+	</block>
+</reference>
+<remove name="header" />
+<remove name="breadcrumbs" />
+<remove name="content" />
+<remove name="footer" />
+
+<reference name="top.links">
+<action method="addLink" translate="Shop">
+<label>Shop</label>
+<url>shop/shop-all</url>
+<title>Shop</title>
+<prepare/>
+<urlParams/>
+<position>10</position>
+</action>
+</reference>

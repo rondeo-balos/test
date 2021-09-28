@@ -1,0 +1,44 @@
+1. The red dots have disappeared that were there before when you hover
+2. Plus the two new links should be buttons (like the shop now one) and centre both horizontally (text) and vertically (in line with the other links) please.
+3. Also the discover menu is now squashed, where before it was spread out
+4. There is still an issue with this, the button overlaps in the section after and the arrows appear in the middle?
+
+Header Template: /var/www/chapeldown.com/vendor/chapeldown/theme/src/app/design/frontend/curious/default/template/page/html
+
+
+.footer .gridContainer > .social{
+width: 100% !important;
+}
+
+.footer .gridContainer > .newsletter{
+display: none;
+}
+
+.footer .links > .gridContainer > .block:nth-of-type(2){
+display: none;
+}
+
+from
+We are Curious Brewing. From Chapel Down, England’s leading winemaker, we make premium craft beers, each with a winemaker’s twist. Beer for the discerning. Beer for the curious.
+
+to
+We are The Curious Brewery. Where flavour and passion comes first. We believe in trying to create premium craft beers that others can’t.
+
+				<!-- Footer -->
+		   		<div class="newsletter">
+					<?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/footer/newslettersignup.phtml')->toHtml(); ?>
+		   		</div>
+
+
+   		<!-- Footer Links -->
+
+		<div class="block">
+			<div class="block-title">
+				<h3>
+					<?php echo $this->__('Customer Services') ?>
+				</h3>
+			</div>
+			<div class="block-content">
+				<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_links_cust_serv')->toHtml(); ?>
+			</div>
+		</div>

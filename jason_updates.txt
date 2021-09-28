@@ -1,0 +1,19 @@
+• Removed Trade and Press Enquiries Link
+• Removed all of the Customer Services Section *
+• Removed the Terms and Conditions link
+• Removed the Head Office / Sales Office
+• Removed Opening Hours on Contact Us Page
+• Removed Menu Section on Terms and Conditions Page
+• Removed Menu Section on Privacy Policy Page
+• Removed Newsletter Block *
+• Meta Description Updated
+• Opening Hours Updated
+• Removed F: Facebook Messenger Text
+• Removed I would like to receive...
+
+• Uploaded required template files
+• Designing the Template
+• Double checked loom video
+• Invoice Template and Settings found here https://hellotime.co.uk/wp-admin/admin.php?page=wpo_wcpdf_options_page&tab=general
+
+/public_html/wp-content/themes/hello-theme-child-hello-time/woocommerce/pdf/Hello Template

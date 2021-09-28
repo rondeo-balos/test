@@ -1,0 +1,46 @@
+<img class="size-medium wp-image-205 alignright" src="https://wordpress-636266-2130363.cloudwaysapps.com/wp-content/uploads/2021/09/600x600-1-300x300.png" alt="" width="300" height="300" />
+
+<img class="size-medium wp-image-206 alignright" style="display: none;" src="https://wordpress-636266-2130363.cloudwaysapps.com/wp-content/uploads/2021/09/600x600-300x300.png" alt="" width="300" height="300" />
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a justo id augue feugiat elementum. Donec et ex mollis, fermentum lacus in, aliquam leo. Curabitur ullamcorper diam erat, eu rhoncus augue sagittis ac. Aliquam est nisl, efficitur eu tellus at, tristique semper orci. In hac habitasse platea dictumst. Etiam egestas, risus quis efficitur tristique, enim arcu iaculis arcu, sit amet hendrerit arcu dui sit amet augue. Vestibulum bibendum tempor erat, sed ullamcorper ipsum pharetra vel. Sed sodales eu leo ut egestas. Donec turpis lacus, pharetra vitae eleifend eget, pharetra et purus. Quisque consectetur varius arcu ac hendrerit. Morbi in posuere massa. Ut id ornare felis.
+
+<script class="toeval">
+jQuery(document).ready(function(){
+var section = jQuery('#section-bg');
+section.css({
+'background-image': 'url(' + jQuery('.wp-image-205.alignright').attr('src') + ')',
+'background-repeat': 'no-repeat',
+'background-size': 'cover',
+'background-position': 'center bottom'
+});
+function selectImage(e){
+var section = jQuery('#section-bg');
+if(jQuery(e).hasClass('vi-wpvs-option-wrap-selected')){
+var attr = jQuery(e).attr('data-attribute_value');
+if( attr === 'White' ){
+section.css({
+'background-image': 'url(' + jQuery('.wp-image-205.alignright').attr('src') + ')',
+'background-repeat': 'no-repeat',
+'background-size': 'cover',
+'background-position': 'center bottom'
+});
+jQuery('.wp-image-205.alignright').attr('style',''); //class for white
+jQuery('.wp-image-206.alignright').attr('style','display: none;'); //class for pink
+}
+else if( attr === 'Black' ){
+section.css({
+'background-image': 'url(' + jQuery('.wp-image-206.alignright').attr('src') + ')',
+'background-repeat': 'no-repeat',
+'background-size': 'cover',
+'background-position': 'center bottom'
+});
+jQuery('.wp-image-206.alignright').attr('style',''); //class for pink
+jQuery('.wp-image-205.alignright').attr('style','display: none;'); //class for white
+}
+}
+}
+jQuery('.vi-wpvs-option-wrap').click(function(e){
+selectImage(this);
+});
+});
+</script>

@@ -1,0 +1,138 @@
+
+<style>
+/* 
+Theme Name: Hello Elementor Child
+Theme URI: https://github.com/elementor/hello-theme/
+Description: Hello Elementor Child is a child theme of Hello Elementor, created by Elementor team
+Author: Elementor Team
+Author URI: https://elementor.com/
+Template: hello-elementor
+Version: 1.0.1
+Text Domain: hello-elementor-child
+License: GNU General Public License v3 or later.
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
+Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, featured-images, rtl-language-support, threaded-comments, translation-ready
+*/
+
+/*
+    Add your custom styles here
+*/
+
+.comment-form-url{
+	display: none !important;
+}
+.comment-respond,
+.comment-respond *{
+	font-family: var( --e-global-typography-text-font-family ), heebo !important;
+    font-size: var( --e-global-typography-text-font-size ) !important;
+    font-style: var( --e-global-typography-text-font-style ) !important;
+    font-weight: var( --e-global-typography-text-font-weight ) !important;
+    text-transform: var( --e-global-typography-text-text-transform ) !important;
+}
+button[type="submit"]:hover:not(.elementor-size-sm),
+input[type="submit"]:hover:not(.elementor-size-sm){
+	background: var( --e-global-color-ddb34d7 ) !important;
+	color: #000 !important;
+}
+button[type="submit"]:not(.elementor-size-sm),
+input[type="submit"]:not(.elementor-size-sm){
+	text-transform: uppercase !important;
+	font-weight: bold !important;
+	font-family: Heebo !important;
+}
+.comment-reply-title, .title-comments{
+	font-family: Heebo !important;
+    font-size: 18px !important;
+	line-height: 22px !important;
+}
+.comment-form-comment label,
+.comment-form-author label,
+.comment-form-email label{
+font-family: Heebo !important;
+text-transform: uppercase !important;
+font-weight: bold !important;
+}
+</style>
+
+<?php
+<?php
+/**
+ * The template for displaying comments.
+ *
+ * This is the template that displays the area of the page that contains both the current comments
+ * and the comment form.
+ *
+ * @package HelloElementor
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
+// Comment Reply Script.
+if ( comments_open() && get_option( 'thread_comments' ) ) {
+	wp_enqueue_script( 'comment-reply' );
+}
+?>
+<section id="comments" class="comments-area">
+
+	<?php if ( have_comments() ) : ?>
+		<h3 class="title-comments">
+			<?php
+			$comments_number = get_comments_number();
+			if ( '1' === $comments_number ) {
+				printf( esc_html_x( 'One Response', 'comments title', 'hello-elementor' ) );
+			} else {
+				printf(
+					esc_html( /* translators: 1: number of comments */
+						_nx(
+							'%1$s Response',
+							'%1$s Responses',
+							$comments_number,
+							'comments title',
+							'hello-elementor'
+						)
+					),
+					esc_html( number_format_i18n( $comments_number ) )
+				);
+			}
+			?>
+		</h3>
+
+		<?php the_comments_navigation(); ?>
+
+	<ol class="comment-list">
+		<?php
+		wp_list_comments(
+			[
+				'style'       => 'ol',
+				'short_ping'  => true,
+				'avatar_size' => 42,
+			]
+		);
+		?>
+	</ol><!-- .comment-list -->
+
+		<?php the_comments_navigation(); ?>
+
+<?php endif; // Check for have_comments(). ?>
+
+<?php
+// If comments are closed and there are comments, let's leave a little note, shall we?
+if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
+	?>
+	<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'hello-elementor' ); ?></p>
+<?php endif; ?>
+
+<?php
+comment_form(
+	array(
+		'title_reply_before' => '<h4 id="reply-title" class="comment-reply-title">',
+		'title_reply' => 'HOW DID YOU FIND THE ARTICLE?<br>TELL US:',
+		'title_reply_after'  => '</h4>',
+		'logged_in_as'=>'',
+	)
+);
+?>
+
+</section><!-- .comments-area -->

@@ -1,0 +1,61 @@
+<?php
+/**
+ * Header Template
+ */
+?>
+<div class="header-container">
+    <header class="header">
+        <div class="gridContainer">
+            <div class="left">
+                <?php echo $this->getChildHtml('topMenu') ?>
+                <li class="mobile-account-link parent">
+                    <a href="<?php echo $this->getBaseUrl(); ?>customer/account/"><span><?php echo $this->__('Account') ?></span></a>
+                </li>
+            </div>
+            <div class="mid">
+                <?php if ($this->getIsHomePage()):?>
+                <a href="<?php echo $this->getUrl('') ?>" class="logo h1"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
+                <?php else:?>
+                <a href="<?php echo $this->getUrl('') ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
+                <?php endif?>
+            </div>
+            <div class="right">
+                <div class="quick-access">
+                    <div class="header-drop search">
+                        <span class="icon--search"></span>
+                    </div>
+                    <div class="header-drop user-panal">
+                        <div class="header-selectors user-pa">
+                            <?php if ($this->helper('customer')->isLoggedIn()): ?>
+                            <a class="header-selectors account" href="<?php echo $this->getBaseUrl(); ?>customer/account/"><?php echo $this->__('My Account') ?></a>
+                            <?php else: ?>
+                            <a class="signIn" href="<?php echo Mage::helper('customer')->getLoginUrl(); ?>"><?php echo $this->__('Log in') ?></a>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <?php echo $this->getChildHtml('header-cart'); ?>
+                </div>
+            </div>
+        </div>
+    </header>
+    <script>
+    jQuery(document).ready(function() {
+        jQuery(window).resize(function() { 
+            jQuery(window).scroll(function() {
+                if (jQuery(this).scrollTop() > 144 && jQuery(window).width() > 1199 ){  
+                    jQuery('.header-container').addClass("sticky");
+                }
+                else{
+                    jQuery('.header-container').removeClass("sticky");
+                }
+                if (jQuery(this).scrollTop() > 190 && jQuery(window).width() > 1199 ){
+                    jQuery('.header-container').addClass("active");
+                } else{
+                    jQuery('.header-container').removeClass("active");
+                }
+            });
+        }).resize();
+    });
+    </script>
+</div>
+<?php echo $this->getChildHtml('topSearch'); ?>
