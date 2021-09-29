@@ -42,3 +42,13 @@ We are The Curious Brewery. Where flavour and passion comes first. We believe in
 				<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_links_cust_serv')->toHtml(); ?>
 			</div>
 		</div>
+
+<!-- Contact Form -->
+
+		<reference name="content">
+            <block type="core/template" name="contactForm" template="lewis/contactform/form.phtml"/>
+</reference>
+<reference name="contactForm">
+<block type="lewis_contactform/contacts_extended" name="extended_fields" as="extended_fields" template="lewis/contactform/extended_fields.phtml"/>
+<block type="studioforty9_recaptcha/explicit" name="studioforty9.recaptcha.explicit" template="studioforty9/recaptcha/explicit.phtml"/>
+</reference>

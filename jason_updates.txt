@@ -9,7 +9,15 @@
 • Meta Description Updated
 • Opening Hours Updated
 • Removed F: Facebook Messenger Text
-• Removed I would like to receive...
+
+• Removed the Contact Form entirely
+• Replaced Privacy Notice to Privacy & Cookie Policy in the attached document
+• Waiting for the booking form credentials
+
+• Updated PRIVACY NOTICE Text
+• Opening Hours link updated to go to find us section
+
+
 
 • Uploaded required template files
 • Designing the Template
