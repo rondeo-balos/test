@@ -24,4 +24,10 @@
 • Double checked loom video
 • Invoice Template and Settings found here https://hellotime.co.uk/wp-admin/admin.php?page=wpo_wcpdf_options_page&tab=general
 
+• Transferred Header Code to Elementor Template
+• Invoice Header which can be found here https://hellotime.co.uk/wp-admin/post.php?post=7929&action=elementor
+• Added a little gap in the footer
+• Adjusted Invoice number and Date closer to the Label:
+• Hello I'm Here image lined up on address
+
 /public_html/wp-content/themes/hello-theme-child-hello-time/woocommerce/pdf/Hello Template
