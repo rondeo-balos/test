@@ -1,0 +1,413 @@
+[
+    {
+        "key": "group_snippethub_options",
+        "title": "Snippethub Options",
+        "fields": [
+            {
+                "key": "field_org_name",
+                "label": "Organization Name",
+                "name": "org_name",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "default_value": "SnippetHub"
+            },
+            {
+                "key": "field_org_description",
+                "label": "Organization Description",
+                "name": "org_description",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "default_value": "Design, build, publish. Repeat."
+            },
+            {
+                "key": "field_phone_number",
+                "label": "Phone Number",
+                "name": "phone_number",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "default_value": ""
+            },
+            {
+                "key": "field_brand_logo",
+                "label": "Brand Logo",
+                "name": "brand_logo",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "return_format": "array",
+                "preview_size": "thumbnail",
+                "library": "all"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "acf-options"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": "Global site options for Snippethub."
+    },
+    {
+        "key": "group_nav_01",
+        "title": "Nav: nav-01",
+        "fields": [
+            {
+                "key": "field_nav_logo",
+                "label": "Nav Logo",
+                "name": "nav_logo",
+                "type": "image",
+                "required": 0,
+                "return_format": "array",
+                "preview_size": "thumbnail",
+                "library": "all"
+            },
+            {
+                "key": "field_nav_site_title",
+                "label": "Site Title",
+                "name": "nav_site_title",
+                "type": "text",
+                "required": 0,
+                "default_value": "SnippetHub"
+            },
+            {
+                "key": "field_nav_items",
+                "label": "Navigation Items",
+                "name": "nav_items",
+                "type": "repeater",
+                "required": 0,
+                "sub_fields": [
+                    {
+                        "key": "field_nav_item_label",
+                        "label": "Label",
+                        "name": "label",
+                        "type": "text",
+                        "required": 0,
+                        "default_value": ""
+                    },
+                    {
+                        "key": "field_nav_item_url",
+                        "label": "URL",
+                        "name": "url",
+                        "type": "url",
+                        "required": 0,
+                        "default_value": "#"
+                    }
+                ],
+                "min": 0,
+                "max": 0,
+                "layout": "table",
+                "button_label": "Add Item"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_template",
+                    "operator": "==",
+                    "value": "page-generated.php"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "active": 1,
+        "description": ""
+    },
+    {
+        "key": "group_hero_01",
+        "title": "Hero: hero-01",
+        "fields": [
+            {
+                "key": "field_hero_swirl_image",
+                "label": "Decorative Swirl Image",
+                "name": "hero_swirl_image",
+                "type": "image",
+                "required": 0,
+                "return_format": "array",
+                "preview_size": "medium",
+                "library": "all"
+            },
+            {
+                "key": "field_hero_heading",
+                "label": "Heading",
+                "name": "hero_heading",
+                "type": "text",
+                "required": 0,
+                "default_value": "Design, build, <br />publish. Repeat."
+            },
+            {
+                "key": "field_hero_subheading",
+                "label": "Subheading",
+                "name": "hero_subheading",
+                "type": "textarea",
+                "required": 0,
+                "default_value": "Extensive documentation, user-friendly guides, and client stories available in popular programming languages such as Node.js, Python, and Ruby. Our focus on creating a seamless user experience is aimed at streamlining the process for you to achieve similar results effortlessly."
+            },
+            {
+                "key": "field_hero_cta_label",
+                "label": "CTA Label",
+                "name": "hero_cta_label",
+                "type": "text",
+                "required": 0,
+                "default_value": "Explore our documentation"
+            },
+            {
+                "key": "field_hero_cta_url",
+                "label": "CTA URL",
+                "name": "hero_cta_url",
+                "type": "url",
+                "required": 0,
+                "default_value": "#"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_template",
+                    "operator": "==",
+                    "value": "page-generated.php"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "active": 1,
+        "description": ""
+    },
+    {
+        "key": "group_code_preview_01",
+        "title": "Code Preview: code-preview-01",
+        "fields": [
+            {
+                "key": "field_code_blocks",
+                "label": "Code Blocks (tabs)",
+                "name": "code_blocks",
+                "type": "repeater",
+                "required": 0,
+                "sub_fields": [
+                    {
+                        "key": "field_code_block_label",
+                        "label": "Label",
+                        "name": "label",
+                        "type": "text",
+                        "required": 0,
+                        "default_value": "Output"
+                    },
+                    {
+                        "key": "field_code_block_content",
+                        "label": "Content",
+                        "name": "content",
+                        "type": "textarea",
+                        "required": 0,
+                        "default_value": "@font-face {
+  font-family: 'Swatch';
+  src: url('swatch.woff2');
+}
+body {
+  font-family: 'Swatch', sans-serif;
+  background: #000D00;
+  color: #f0f0f0;
+}
+a {
+  color: #a8ff60;
+  text-decoration: none;
+}"
+                    }
+                ],
+                "min": 0,
+                "max": 0,
+                "layout": "table",
+                "button_label": "Add Block"
+            },
+            {
+                "key": "field_code_footer_label",
+                "label": "Footer Link Label",
+                "name": "code_footer_label",
+                "type": "text",
+                "required": 0,
+                "default_value": "Explore documentation →"
+            },
+            {
+                "key": "field_code_footer_url",
+                "label": "Footer Link URL",
+                "name": "code_footer_url",
+                "type": "url",
+                "required": 0,
+                "default_value": "#"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_template",
+                    "operator": "==",
+                    "value": "page-generated.php"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "active": 1,
+        "description": ""
+    },
+    {
+        "key": "group_features_01",
+        "title": "Features: features-01",
+        "fields": [
+            {
+                "key": "field_features_items",
+                "label": "Feature Items",
+                "name": "features_items",
+                "type": "repeater",
+                "required": 0,
+                "sub_fields": [
+                    {
+                        "key": "field_feature_icon",
+                        "label": "Icon",
+                        "name": "icon",
+                        "type": "image",
+                        "required": 0,
+                        "return_format": "url",
+                        "preview_size": "thumbnail",
+                        "library": "all"
+                    },
+                    {
+                        "key": "field_feature_title",
+                        "label": "Title",
+                        "name": "title",
+                        "type": "text",
+                        "required": 0,
+                        "default_value": ""
+                    },
+                    {
+                        "key": "field_feature_description",
+                        "label": "Description",
+                        "name": "description",
+                        "type": "textarea",
+                        "required": 0,
+                        "default_value": ""
+                    }
+                ],
+                "min": 0,
+                "max": 0,
+                "layout": "table",
+                "button_label": "Add Feature"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_template",
+                    "operator": "==",
+                    "value": "page-generated.php"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "active": 1,
+        "description": ""
+    },
+    {
+        "key": "group_footer_01",
+        "title": "Footer: footer-01",
+        "fields": [
+            {
+                "key": "field_footer_logo",
+                "label": "Footer Logo",
+                "name": "footer_logo",
+                "type": "image",
+                "required": 0,
+                "return_format": "array",
+                "preview_size": "thumbnail",
+                "library": "all"
+            },
+            {
+                "key": "field_footer_site_title",
+                "label": "Footer Site Title",
+                "name": "footer_site_title",
+                "type": "text",
+                "required": 0,
+                "default_value": "SnippetHub"
+            },
+            {
+                "key": "field_footer_links",
+                "label": "Footer Links",
+                "name": "footer_links",
+                "type": "repeater",
+                "required": 0,
+                "sub_fields": [
+                    {
+                        "key": "field_footer_link_label",
+                        "label": "Label",
+                        "name": "label",
+                        "type": "text",
+                        "required": 0,
+                        "default_value": ""
+                    },
+                    {
+                        "key": "field_footer_link_url",
+                        "label": "URL",
+                        "name": "url",
+                        "type": "url",
+                        "required": 0,
+                        "default_value": "#"
+                    }
+                ],
+                "min": 0,
+                "max": 0,
+                "layout": "table",
+                "button_label": "Add Link"
+            },
+            {
+                "key": "field_footer_copyright",
+                "label": "Copyright",
+                "name": "footer_copyright",
+                "type": "textarea",
+                "required": 0,
+                "default_value": "&copy; 2025 SnippetHub. All rights reserved."
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_template",
+                    "operator": "==",
+                    "value": "page-generated.php"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "active": 1,
+        "description": ""
+    }
+]
