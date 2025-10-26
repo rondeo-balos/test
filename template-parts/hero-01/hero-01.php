@@ -6,7 +6,7 @@ $sub = hchild_field('hero_subheading', false, "Extensive documentation, user-fri
 $cta_label = hchild_field('hero_cta_label', false, 'Explore our documentation');
 $cta_url = hchild_field('hero_cta_url', false, '#');
 ?>
-<main class="flex-1 flex flex-col lg:flex-row items-center justify-center px-6 md:px-16 lg:px-32 relative z-10">
+<main class="flex-1 flex flex-col lg:flex-row items-center justify-center relative z-10">
     <div class="w-full lg:w-1/2 mb-12 lg:mb-0">
         <div aria-hidden="true" class="absolute left-[-75px] top-24 z-0">
             <img src="<?php echo esc_url(is_array($swirl) && isset($swirl['url']) ? $swirl['url'] : $swirl); ?>" alt="" class="opacity-40 pointer-events-none select-none" loading="lazy" />
