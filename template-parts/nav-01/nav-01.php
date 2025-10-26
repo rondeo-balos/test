@@ -11,7 +11,15 @@ $nav_items = hchild_field('nav_items', false, array(
 ?>
 <header class="w-full flex items-center justify-between py-8 px-6 md:px-16 lg:px-32">
     <div class="flex items-center space-x-3">
-        <img src="<?php echo esc_url(is_array($logo) && isset($logo['url']) ? $logo['url'] : $logo); ?>" alt="<?php echo esc_attr($site_title); ?> Logo" class="w-10 h-10 rounded-full" loading="lazy" />
+        <?php
+        $logo_url = is_array($logo) && isset($logo['url']) ? $logo['url'] : $logo;
+        if (!empty($logo_url) && strpos($logo_url, 'placehold.co') === false) {
+            echo '<img src="' . esc_url($logo_url) . '" alt="' . esc_attr($site_title) . ' Logo" class="w-10 h-10 rounded-full" loading="lazy" />';
+        } else {
+            // Font Awesome fallback icon
+            echo '<span class="text-white text-2xl"><i class="fa-solid fa-code" aria-hidden="true"></i><span class="sr-only">' . esc_html($site_title) . '</span></span>';
+        }
+        ?>
         <span class="text-white text-xl font-semibold tracking-tight"><?php echo esc_html($site_title); ?></span>
     </div>
     <nav aria-label="Main navigation">
